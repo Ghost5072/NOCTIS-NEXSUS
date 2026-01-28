@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Image } from '@/components/ui/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,8 +23,14 @@ export default function Header() {
       <nav className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16 py-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-              <span className="text-3xl font-heading font-black text-primary">N</span>
+            <div className="w-12 h-12 flex items-center justify-center group-hover:opacity-80 transition-opacity">
+              <Image 
+                src="https://static.wixstatic.com/media/db0fdb_35b5a11d1c604ae09a98967aeadbb977~mv2.jpg"
+                alt="Noctis Logo"
+                width={48}
+                height={48}
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="font-heading text-xl font-bold text-white hidden sm:block">NOCTIS</span>
           </Link>
