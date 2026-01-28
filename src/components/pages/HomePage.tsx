@@ -90,7 +90,11 @@ export default function HomePage() {
       setLeaderboard(leaderboardData.items);
       setNews(newsData.items);
       setHighlights(highlightsData.items);
-      setHeroVideo(heroVideoData.items[0] || null);
+      const video = heroVideoData.items[0] || null;
+      setHeroVideo(video);
+      if (video) {
+        console.log("Hero video loaded:", { title: video.videoTitle, url: video.videoUrl });
+      }
     } catch (error) {
       console.error("Failed to load data", error);
     } finally {
