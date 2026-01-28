@@ -54,6 +54,31 @@ export interface CommunityMembers {
 
 
 /**
+ * Collection ID: herovideo
+ * Interface for HeroVideo
+ */
+export interface HeroVideo {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  videoTitle?: string;
+  /** @wixFieldType url */
+  videoUrl?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  thumbnailImage?: string;
+  /** @wixFieldType boolean */
+  autoplay?: boolean;
+  /** @wixFieldType boolean */
+  isMuted?: boolean;
+  /** @wixFieldType date */
+  publishDate?: Date | string;
+}
+
+
+/**
  * Collection ID: leaderboard
  * Interface for Leaderboard
  */
