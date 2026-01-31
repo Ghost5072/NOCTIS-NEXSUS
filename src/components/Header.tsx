@@ -20,10 +20,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm border-b border-off-white/10">
-      <nav className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16 py-6">
+      <nav className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16 py-4 md:py-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 flex items-center justify-center group-hover:opacity-80 transition-opacity">
+          <Link to="/" className="flex items-center gap-2 md:gap-3 group">
+            <div className="w-10 md:w-12 h-10 md:h-12 flex items-center justify-center group-hover:opacity-80 transition-opacity">
               <Image 
                 src="https://static.wixstatic.com/media/db0fdb_35b5a11d1c604ae09a98967aeadbb977~mv2.jpg"
                 alt="Noctis Logo"
@@ -32,16 +32,16 @@ export default function Header() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="font-heading text-xl font-bold text-white hidden sm:block">NOCTIS</span>
+            <span className="font-heading text-base md:text-lg lg:text-xl font-bold text-white hidden sm:block break-words">NOCTIS</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-heading font-bold transition-colors relative ${
+                className={`font-heading font-bold text-xs lg:text-base transition-colors relative ${
                   isActive(link.path)
                     ? 'text-primary'
                     : 'text-off-white hover:text-primary'
@@ -85,7 +85,7 @@ export default function Header() {
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`font-heading font-bold py-2 transition-colors ${
+                    className={`font-heading font-bold text-sm md:text-base py-2 transition-colors break-words ${
                       isActive(link.path)
                         ? 'text-primary'
                         : 'text-off-white hover:text-primary'

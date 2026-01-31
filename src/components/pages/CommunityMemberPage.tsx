@@ -33,9 +33,9 @@ export default function CommunityMemberPage() {
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16">
           <Link
             to="/community"
-            className="inline-flex items-center gap-2 font-heading font-bold text-primary hover:text-primary/80 transition-colors mb-8"
+            className="inline-flex items-center gap-2 font-heading font-bold text-xs md:text-sm lg:text-base text-primary hover:text-primary/80 transition-colors mb-8 break-words"
           >
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-5 h-5 flex-shrink-0" />
             Back to Community
           </Link>
 
@@ -47,13 +47,13 @@ export default function CommunityMemberPage() {
             ) : !member ? (
               <div className="text-center py-24">
                 <Users className="w-16 h-16 text-off-white/20 mx-auto mb-6" />
-                <h2 className="font-heading text-3xl font-bold text-white mb-4">Member Not Found</h2>
-                <p className="font-paragraph text-off-white/50 mb-8">
+                <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4 break-words">Member Not Found</h2>
+                <p className="font-paragraph text-xs md:text-base text-off-white/50 mb-8">
                   The member profile you're looking for doesn't exist or has been removed.
                 </p>
                 <Link
                   to="/community"
-                  className="inline-block px-8 py-4 bg-primary text-primary-foreground font-heading font-bold rounded-lg hover:shadow-[0_0_30px_rgba(0,217,255,0.5)] transition-all duration-300"
+                  className="inline-block px-6 md:px-8 py-3 md:py-4 bg-primary text-primary-foreground font-heading font-bold text-sm md:text-base rounded-lg hover:shadow-[0_0_30px_rgba(0,217,255,0.5)] transition-all duration-300"
                 >
                   View Community
                 </Link>
@@ -66,12 +66,12 @@ export default function CommunityMemberPage() {
                 className="space-y-12"
               >
                 {/* Profile Header */}
-                <div className="grid md:grid-cols-3 gap-12">
+                <div className="grid md:grid-cols-3 gap-8 md:gap-12">
                   {/* Avatar */}
                   <div className="md:col-span-1">
                     <div className="relative">
                       {member.avatar && (
-                        <div className="relative h-96 rounded-2xl overflow-hidden border border-off-white/10">
+                        <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden border border-off-white/10">
                           <Image
                             src={member.avatar}
                             alt={member.memberName || 'Member'}
@@ -79,8 +79,8 @@ export default function CommunityMemberPage() {
                             className="w-full h-full object-cover"
                           />
                           {member.isFeatured && (
-                            <div className="absolute top-4 right-4 px-4 py-2 bg-primary text-primary-foreground font-heading font-bold rounded-lg flex items-center gap-2">
-                              <Star className="w-4 h-4" />
+                            <div className="absolute top-4 right-4 px-3 md:px-4 py-1 md:py-2 bg-primary text-primary-foreground font-heading font-bold text-xs md:text-sm rounded-lg flex items-center gap-2">
+                              <Star className="w-3 md:w-4 h-3 md:h-4" />
                               Featured
                             </div>
                           )}
@@ -90,23 +90,23 @@ export default function CommunityMemberPage() {
                   </div>
 
                   {/* Info */}
-                  <div className="md:col-span-2 space-y-8">
+                  <div className="md:col-span-2 space-y-6 md:space-y-8">
                     <div className="space-y-4">
-                      <h1 className="font-heading text-4xl md:text-6xl font-black text-white">
+                      <h1 className="font-heading text-3xl md:text-4xl lg:text-6xl font-black text-white break-words">
                         {member.memberName}
                       </h1>
                       {member.isFeatured && (
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-lg">
-                          <Star className="w-5 h-5 text-primary" />
-                          <span className="font-heading font-bold text-primary">Featured Member</span>
+                        <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-2 bg-primary/10 border border-primary/30 rounded-lg">
+                          <Star className="w-4 md:w-5 h-4 md:h-5 text-primary flex-shrink-0" />
+                          <span className="font-heading font-bold text-xs md:text-sm text-primary">Featured Member</span>
                         </div>
                       )}
                     </div>
 
                     {member.bio && (
                       <div className="space-y-4">
-                        <h2 className="font-heading text-2xl font-bold text-white">About</h2>
-                        <p className="font-paragraph text-lg text-off-white/90 leading-relaxed">
+                        <h2 className="font-heading text-xl md:text-2xl font-bold text-white">About</h2>
+                        <p className="font-paragraph text-sm md:text-lg text-off-white/90 leading-relaxed">
                           {member.bio}
                         </p>
                       </div>
@@ -114,16 +114,16 @@ export default function CommunityMemberPage() {
 
                     {/* Social Links */}
                     <div className="space-y-4">
-                      <h2 className="font-heading text-2xl font-bold text-white">Connect</h2>
-                      <div className="flex flex-wrap gap-4">
+                      <h2 className="font-heading text-xl md:text-2xl font-bold text-white">Connect</h2>
+                      <div className="flex flex-wrap gap-3 md:gap-4">
                         {member.twitterUrl && (
                           <a
                             href={member.twitterUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-3 px-6 py-3 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-lg hover:border-primary transition-all duration-300"
+                            className="flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-lg hover:border-primary transition-all duration-300 text-xs md:text-base break-words"
                           >
-                            <Twitter className="w-5 h-5 text-primary" />
+                            <Twitter className="w-4 md:w-5 h-4 md:h-5 text-primary flex-shrink-0" />
                             <span className="font-heading font-bold text-white">Twitter</span>
                           </a>
                         )}
@@ -132,9 +132,9 @@ export default function CommunityMemberPage() {
                             href={member.twitchUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-3 px-6 py-3 bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/30 rounded-lg hover:border-secondary transition-all duration-300"
+                            className="flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/30 rounded-lg hover:border-secondary transition-all duration-300 text-xs md:text-base break-words"
                           >
-                            <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 md:w-5 h-4 md:h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" />
                             </svg>
                             <span className="font-heading font-bold text-white">Twitch</span>
@@ -145,9 +145,9 @@ export default function CommunityMemberPage() {
                             href={member.youtubeUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-3 px-6 py-3 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-lg hover:border-primary transition-all duration-300"
+                            className="flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-lg hover:border-primary transition-all duration-300 text-xs md:text-base break-words"
                           >
-                            <Youtube className="w-5 h-5 text-primary" />
+                            <Youtube className="w-4 md:w-5 h-4 md:h-5 text-primary flex-shrink-0" />
                             <span className="font-heading font-bold text-white">YouTube</span>
                           </a>
                         )}
@@ -157,9 +157,9 @@ export default function CommunityMemberPage() {
                 </div>
 
                 {/* Additional Info Section */}
-                <div className="bg-gradient-to-br from-background to-background/50 border border-off-white/10 rounded-2xl p-8 md:p-12">
-                  <h2 className="font-heading text-3xl font-bold text-white mb-6">Community Contributions</h2>
-                  <p className="font-paragraph text-lg text-off-white/70 leading-relaxed">
+                <div className="bg-gradient-to-br from-background to-background/50 border border-off-white/10 rounded-2xl p-6 md:p-8 lg:p-12">
+                  <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 break-words">Community Contributions</h2>
+                  <p className="font-paragraph text-sm md:text-lg text-off-white/70 leading-relaxed">
                     {member.memberName} is an active member of the Noctis Gaming Hub community, contributing to the growth
                     and success of Nigerian student esports. Follow their social channels to stay updated with their
                     latest gaming content and achievements.
