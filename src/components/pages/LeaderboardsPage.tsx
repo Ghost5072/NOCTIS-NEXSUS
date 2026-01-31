@@ -79,7 +79,7 @@ export default function LeaderboardsPage() {
             <div className="flex justify-center">
               <Trophy className="w-16 h-16 text-primary" />
             </div>
-            <h1 className="font-heading text-5xl md:text-7xl font-black text-white">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white">
               Leaderboards
             </h1>
             <p className="font-paragraph text-xl text-off-white max-w-3xl mx-auto">
@@ -159,7 +159,7 @@ export default function LeaderboardsPage() {
                             className="w-12 h-8 object-cover rounded mx-auto"
                           />
                         )}
-                        <h3 className="font-heading text-2xl font-bold text-white">
+                        <h3 className="font-heading text-xl sm:text-2xl font-bold text-white break-words">
                           {filteredLeaderboard[1].playerName}
                         </h3>
                         <p className="font-paragraph text-off-white/70">{filteredLeaderboard[1].gameTitle}</p>
@@ -189,7 +189,7 @@ export default function LeaderboardsPage() {
                             className="w-12 h-8 object-cover rounded mx-auto"
                           />
                         )}
-                        <h3 className="font-heading text-3xl font-bold text-white">
+                        <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white break-words">
                           {filteredLeaderboard[0].playerName}
                         </h3>
                         <p className="font-paragraph text-off-white/70">{filteredLeaderboard[0].gameTitle}</p>
@@ -219,7 +219,7 @@ export default function LeaderboardsPage() {
                             className="w-12 h-8 object-cover rounded mx-auto"
                           />
                         )}
-                        <h3 className="font-heading text-2xl font-bold text-white">
+                        <h3 className="font-heading text-xl sm:text-2xl font-bold text-white break-words">
                           {filteredLeaderboard[2].playerName}
                         </h3>
                         <p className="font-paragraph text-off-white/70">{filteredLeaderboard[2].gameTitle}</p>
@@ -272,7 +272,7 @@ export default function LeaderboardsPage() {
                                     className="w-6 h-4 object-cover rounded"
                                   />
                                 )}
-                                <span className="font-paragraph font-bold text-white">{player.playerName}</span>
+                                <span className="font-paragraph font-bold text-white break-words">{player.playerName}</span>
                               </div>
                             </td>
                             <td className="px-6 py-4">

@@ -124,7 +124,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-heading text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] font-black text-white tracking-tighter uppercase mix-blend-difference"
+            className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-[10rem] leading-[0.9] font-black text-white tracking-tighter uppercase mix-blend-difference"
           >
             <GlitchText text="NOCTIS" />
             <br />
@@ -140,9 +140,9 @@ export default function HomePage() {
             className="mt-8 flex flex-col md:flex-row items-center gap-6"
           >
             <div className="h-[1px] w-12 md:w-24 bg-primary" />
-            <p className="font-paragraph text-lg md:text-xl text-off-white/80 max-w-xl text-center md:text-left">
-              The definitive esports command center for the next generation of Nigerian student gamers.
-            </p>
+          <p className="font-paragraph text-lg md:text-xl text-off-white/80 max-w-xl text-center md:text-left break-words">
+            The definitive esports command center for the next generation of Nigerian student gamers.
+          </p>
             <div className="h-[1px] w-12 md:w-24 bg-primary" />
           </motion.div>
 
@@ -223,7 +223,7 @@ export default function HomePage() {
                           {featuredTournament.gameTitle}
                         </span>
                       </div>
-                      <h2 className="font-heading text-4xl md:text-6xl font-black text-white uppercase leading-none mb-4">
+                      <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-white uppercase leading-none mb-4 break-words">
                         {featuredTournament.tournamentName}
                       </h2>
                     </div>
@@ -281,7 +281,7 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
             <div>
               <SectionLabel number="02" title="War Room" />
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-white uppercase">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white uppercase">
                 Tournament <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Hub</span>
               </h2>
             </div>
@@ -335,7 +335,7 @@ export default function HomePage() {
                       </div>
                       
                       <div className="p-8 flex-grow flex flex-col">
-                        <h3 className="font-heading text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-1">
+                        <h3 className="font-heading text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-1 break-words">
                           {tournament.tournamentName}
                         </h3>
                         <p className="font-paragraph text-sm text-off-white/60 mb-6 uppercase tracking-wider">
@@ -368,7 +368,7 @@ export default function HomePage() {
             {/* Header Side */}
             <div className="lg:col-span-4">
               <SectionLabel number="03" title="Elite Operatives" />
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-white uppercase mb-6">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white uppercase mb-6">
                 Top <br /><span className="text-primary">Rankings</span>
               </h2>
               <p className="font-paragraph text-off-white/60 mb-8 max-w-md">
@@ -418,7 +418,7 @@ export default function HomePage() {
                             <Image src={player.countryFlagImage} alt="Flag" width={24} className="w-6 h-4 object-cover opacity-70" />
                           )}
                           <div>
-                            <p className="font-heading font-bold text-white group-hover:text-primary transition-colors">{player.playerName}</p>
+                            <p className="font-heading font-bold text-white group-hover:text-primary transition-colors break-words">{player.playerName}</p>
                             <p className="text-xs text-off-white/40 font-paragraph uppercase">{player.gameTitle}</p>
                           </div>
                           {player.badgeImage && (
@@ -485,7 +485,7 @@ export default function HomePage() {
                             <span>•</span>
                             <span>{article.publishDate ? new Date(article.publishDate).toLocaleDateString() : ''}</span>
                           </div>
-                          <h3 className="font-heading text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                          <h3 className="font-heading text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2 break-words">
                             {article.title}
                           </h3>
                           <p className="font-paragraph text-sm text-off-white/60 line-clamp-2">
@@ -551,7 +551,7 @@ export default function HomePage() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <Shield className="w-16 h-16 text-primary mx-auto mb-8" />
-          <h3 className="font-heading text-5xl md:text-7xl font-black text-white uppercase mb-6">
+          <h3 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase mb-6">
             Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Dominate?</span>
           </h3>
           <p className="font-paragraph text-xl text-off-white/70 mb-12 max-w-2xl mx-auto">

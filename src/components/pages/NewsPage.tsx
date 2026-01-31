@@ -57,7 +57,7 @@ export default function NewsPage() {
             <div className="flex justify-center">
               <Newspaper className="w-16 h-16 text-primary" />
             </div>
-            <h1 className="font-heading text-5xl md:text-7xl font-black text-white">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white">
               News & Updates
             </h1>
             <p className="font-paragraph text-xl text-off-white max-w-3xl mx-auto">
@@ -94,7 +94,7 @@ export default function NewsPage() {
                       <div className="inline-block px-4 py-2 bg-primary text-primary-foreground font-heading font-bold text-sm rounded-lg w-fit">
                         Featured
                       </div>
-                      <h2 className="font-heading text-3xl md:text-4xl font-bold text-white group-hover:text-primary transition-colors">
+                      <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-white group-hover:text-primary transition-colors break-words">
                         {featuredArticle.title}
                       </h2>
                       <p className="font-paragraph text-lg text-off-white/70 line-clamp-3">
@@ -159,7 +159,7 @@ export default function NewsPage() {
                                 {article.publishDate ? new Date(article.publishDate).toLocaleDateString() : ''}
                               </span>
                             </div>
-                            <h3 className="font-heading text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2">
+                            <h3 className="font-heading text-lg sm:text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2 break-words">
                               {article.title}
                             </h3>
                             <p className="font-paragraph text-off-white/70 line-clamp-3">
