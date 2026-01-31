@@ -169,7 +169,7 @@ export default function TournamentsPage() {
                                 {tournament.status}
                               </span>
                             </div>
-                            <h3 className="font-heading text-lg sm:text-xl font-bold text-white group-hover:text-primary transition-colors break-words">
+                            <h3 className="font-heading text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2">
                               {tournament.tournamentName}
                             </h3>
                             <p className="font-paragraph text-off-white/70">{tournament.gameTitle}</p>

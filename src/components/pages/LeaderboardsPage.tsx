@@ -159,7 +159,7 @@ export default function LeaderboardsPage() {
                             className="w-12 h-8 object-cover rounded mx-auto"
                           />
                         )}
-                        <h3 className="font-heading text-xl sm:text-2xl font-bold text-white break-words">
+                        <h3 className="font-heading text-base sm:text-lg md:text-xl font-bold text-white line-clamp-2">
                           {filteredLeaderboard[1].playerName}
                         </h3>
                         <p className="font-paragraph text-off-white/70">{filteredLeaderboard[1].gameTitle}</p>
@@ -189,7 +189,7 @@ export default function LeaderboardsPage() {
                             className="w-12 h-8 object-cover rounded mx-auto"
                           />
                         )}
-                        <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white break-words">
+                        <h3 className="font-heading text-lg sm:text-2xl md:text-3xl font-bold text-white line-clamp-2">
                           {filteredLeaderboard[0].playerName}
                         </h3>
                         <p className="font-paragraph text-off-white/70">{filteredLeaderboard[0].gameTitle}</p>
@@ -219,7 +219,7 @@ export default function LeaderboardsPage() {
                             className="w-12 h-8 object-cover rounded mx-auto"
                           />
                         )}
-                        <h3 className="font-heading text-xl sm:text-2xl font-bold text-white break-words">
+                        <h3 className="font-heading text-base sm:text-lg md:text-xl font-bold text-white line-clamp-2">
                           {filteredLeaderboard[2].playerName}
                         </h3>
                         <p className="font-paragraph text-off-white/70">{filteredLeaderboard[2].gameTitle}</p>
@@ -272,7 +272,7 @@ export default function LeaderboardsPage() {
                                     className="w-6 h-4 object-cover rounded"
                                   />
                                 )}
-                                <span className="font-paragraph font-bold text-white break-words">{player.playerName}</span>
+                                <span className="font-paragraph font-bold text-white line-clamp-1">{player.playerName}</span>
                               </div>
                             </td>
                             <td className="px-6 py-4">
