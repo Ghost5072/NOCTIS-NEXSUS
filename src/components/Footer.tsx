@@ -82,11 +82,11 @@ export default function Footer() {
             <h3 className="font-heading text-lg font-bold text-white">Get in Touch</h3>
             <div className="space-y-4">
               <a
-                href="mailto:contact@noctisgaming.com"
+                href="mailto:noctisgamingng@gmail.com"
                 className="flex items-center gap-3 font-paragraph text-off-white/70 hover:text-primary transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span>contact@noctisgaming.com</span>
+                <span>noctisgamingng@gmail.com</span>
               </a>
               <p className="font-paragraph text-off-white/70">
                 Join our community and compete in Nigeria's biggest student esports tournaments.
@@ -99,7 +99,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-off-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="font-paragraph text-sm text-off-white/50">
-              © {currentYear} Noctis Gaming Hub. All rights reserved.
+              © {currentYear} Noctis. All rights reserved.
             </p>
             <div className="flex items-center gap-6 font-paragraph text-sm text-off-white/50">
               <a href="#privacy" className="hover:text-primary transition-colors">
