@@ -93,9 +93,7 @@ export default function HomePage() {
         className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50"
         style={{ scaleX }}
       />
-
       <Header />
-
       {/* --- HERO SECTION --- */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Dynamic Background Grid */}
@@ -120,19 +118,6 @@ export default function HomePage() {
             </div>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-heading text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] font-black text-white tracking-tighter uppercase mix-blend-difference"
-          >
-            <GlitchText text="NOCTIS" />
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-off-white to-white/50">
-              NEXUS
-            </span>
-          </motion.h1>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -145,6 +130,19 @@ export default function HomePage() {
             </p>
             <div className="h-[1px] w-12 md:w-24 bg-primary" />
           </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="font-heading text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] font-black text-white tracking-tighter uppercase mix-blend-difference"
+          >
+            <GlitchText text="NOCTIS" />
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-off-white to-white/50">
+              NEXUS
+            </span>
+          </motion.h1>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -181,7 +179,6 @@ export default function HomePage() {
           <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
         </motion.div>
       </section>
-
       {/* --- FEATURED TOURNAMENT (Sticky Layout) --- */}
       {featuredTournament && (
         <section className="relative w-full py-32 border-t border-white/5">
@@ -272,7 +269,6 @@ export default function HomePage() {
           </div>
         </section>
       )}
-
       {/* --- TOURNAMENT HUB (Grid) --- */}
       <section className="w-full py-32 bg-background relative">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -360,7 +356,6 @@ export default function HomePage() {
           )}
         </div>
       </section>
-
       {/* --- LEADERBOARD (Data Table Style) --- */}
       <section className="w-full py-32 bg-[#0A0A0A] border-y border-white/5">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -439,7 +434,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- NEWS & COMMUNITY (Asymmetrical Layout) --- */}
       <section className="w-full py-32 bg-background relative overflow-hidden">
         {/* Decorative Background Elements */}
@@ -543,7 +537,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- CTA SECTION --- */}
       <section className="w-full py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5" />
@@ -566,7 +559,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-
       <Footer />
     </div>
   );
