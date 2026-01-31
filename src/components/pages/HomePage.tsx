@@ -551,9 +551,9 @@ export default function HomePage() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <Shield className="w-16 h-16 text-primary mx-auto mb-8" />
-          <h2 className="font-heading text-5xl md:text-7xl font-black text-white uppercase mb-6">
+          <h3 className="font-heading text-5xl md:text-7xl font-black text-white uppercase mb-6">
             Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Dominate?</span>
-          </h2>
+          </h3>
           <p className="font-paragraph text-xl text-off-white/70 mb-12 max-w-2xl mx-auto">
             Join the fastest growing student esports community in Nigeria. Compete in tournaments, connect with players, and build your legacy.
           </p>
