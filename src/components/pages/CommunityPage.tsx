@@ -64,7 +64,7 @@ export default function CommunityPage() {
             <div className="flex justify-center">
               <Users className="w-16 h-16 text-primary" />
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-7xl font-black text-white break-words">
+            <h2 className="font-heading md:text-5xl lg:text-7xl font-black text-white break-words text-3xl">
               Community
             </h2>
             <p className="font-paragraph text-base md:text-lg lg:text-xl text-off-white max-w-3xl mx-auto">
