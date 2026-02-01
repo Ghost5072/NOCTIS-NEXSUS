@@ -66,7 +66,7 @@ export default function TournamentsPage() {
             <div className="flex justify-center">
               <Trophy className="w-16 h-16 text-primary" />
             </div>
-            <h2 className="font-heading md:text-6xl lg:text-7xl font-black text-white sm:text-3xl text-3xl text-left">
+            <h2 className="md:text-6xl lg:text-7xl text-white sm:text-3xl text-3xl font-space-grotesk text-center uppercase font-bold">
               Tournaments
             </h2>
             <p className="font-paragraph text-xl text-off-white max-w-3xl mx-auto">
