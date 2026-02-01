@@ -78,9 +78,9 @@ export default function LeaderboardsPage() {
             <div className="flex justify-center">
               <Trophy className="w-16 h-16 text-primary" />
             </div>
-            <h1 className="font-heading md:text-6xl lg:text-7xl font-black text-white sm:text-3xl text-3xl">
+            <h2 className="font-heading md:text-6xl lg:text-7xl font-black text-white sm:text-3xl text-3xl">
               Leaderboards
-            </h1>
+            </h2>
             <p className="font-paragraph text-xl text-off-white max-w-3xl mx-auto">
               Track the top players across all games and see where you rank
             </p>

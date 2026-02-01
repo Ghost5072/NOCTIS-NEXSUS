@@ -52,7 +52,6 @@ export default function CommunityPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-
       {/* Hero Section */}
       <section className="w-full py-24 bg-gradient-to-b from-background via-primary/5 to-background">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -65,16 +64,15 @@ export default function CommunityPage() {
             <div className="flex justify-center">
               <Users className="w-16 h-16 text-primary" />
             </div>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-black text-white break-words">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-7xl font-black text-white break-words">
               Community
-            </h1>
+            </h2>
             <p className="font-paragraph text-base md:text-lg lg:text-xl text-off-white max-w-3xl mx-auto">
               Discover amazing content from our gaming community, meet featured members, and share your own highlights
             </p>
           </motion.div>
         </div>
       </section>
-
       {/* Community Socials */}
       <section className="w-full py-24 bg-gradient-to-b from-background/80 to-background">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -220,7 +218,6 @@ export default function CommunityPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Featured Members */}
       <section className="w-full py-24 bg-gradient-to-b from-background to-background/80">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -329,7 +326,6 @@ export default function CommunityPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Community Highlights */}
       <section className="w-full py-24">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -431,7 +427,6 @@ export default function CommunityPage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
