@@ -66,7 +66,6 @@ export default function LeaderboardsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-
       {/* Hero Section */}
       <section className="w-full py-24 bg-gradient-to-b from-background via-primary/5 to-background">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -79,7 +78,7 @@ export default function LeaderboardsPage() {
             <div className="flex justify-center">
               <Trophy className="w-16 h-16 text-primary" />
             </div>
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white">
+            <h1 className="font-heading md:text-6xl lg:text-7xl font-black text-white sm:text-3xl text-3xl">
               Leaderboards
             </h1>
             <p className="font-paragraph text-xl text-off-white max-w-3xl mx-auto">
@@ -88,7 +87,6 @@ export default function LeaderboardsPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Filters & Search */}
       <section className="w-full py-12 border-b border-off-white/10">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -124,7 +122,6 @@ export default function LeaderboardsPage() {
           </div>
         </div>
       </section>
-
       {/* Leaderboard Table */}
       <section className="w-full py-16">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -302,7 +299,6 @@ export default function LeaderboardsPage() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
