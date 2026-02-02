@@ -26,30 +26,24 @@ export default function TournamentsPage() {
 
   const loadTournaments = async (skipValue: number) => {
     setIsLoading(true);
-    const result = await BaseCrudService.getAll<Tournaments>('tournaments', {}, { limit: 12, skip: skipValue });
+    // Fetch all tournaments to apply client-side filtering
+    const result = await BaseCrudService.getAll<Tournaments>('tournaments', {}, { limit: 100 });
     
     let filtered = result.items;
     if (activeFilter !== 'All') {
-      filtered = filtered.filter(t => t.status === activeFilter);
+      filtered = filtered.filter(t => t.status?.toLowerCase() === activeFilter.toLowerCase());
     }
     if (activeGameFilter !== 'All Games') {
       filtered = filtered.filter(t => t.gameTitle === activeGameFilter);
     }
 
-    if (skipValue === 0) {
-      setTournaments(filtered);
-    } else {
-      setTournaments(prev => [...prev, ...filtered]);
-    }
-    
-    setHasNext(result.hasNext);
-    setSkip(result.nextSkip || 0);
+    setTournaments(filtered);
+    setHasNext(false);
+    setSkip(0);
     setIsLoading(false);
   };
 
-  const loadMore = () => {
-    loadTournaments(skip);
-  };
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -197,7 +191,7 @@ export default function TournamentsPage() {
                 {hasNext && (
                   <div className="flex justify-center mt-12">
                     <Button
-                      onClick={loadMore}
+                      onClick={() => loadTournaments(skip)}
                       disabled={isLoading}
                       className="px-8 py-4 bg-primary text-primary-foreground font-heading font-bold text-lg rounded-lg hover:shadow-[0_0_30px_rgba(0,217,255,0.5)] transition-all duration-300"
                     >
