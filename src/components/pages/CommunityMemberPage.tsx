@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Users, ArrowLeft, Star, Twitter, Youtube } from 'lucide-react';
+import { Users, ArrowLeft, Star, Twitter, Youtube, Instagram } from 'lucide-react';
 import { BaseCrudService } from '@/integrations';
 import { CommunityMembers } from '@/entities';
 import { Image } from '@/components/ui/image';
@@ -149,6 +149,17 @@ export default function CommunityMemberPage() {
                           >
                             <Youtube className="w-4 md:w-5 h-4 md:h-5 text-primary flex-shrink-0" />
                             <span className="font-heading font-bold text-white">YouTube</span>
+                          </a>
+                        )}
+                        {member.instagramUrl && (
+                          <a
+                            href={member.instagramUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-lg hover:border-primary transition-all duration-300 text-xs md:text-base break-words"
+                          >
+                            <Instagram className="w-4 md:w-5 h-4 md:h-5 text-primary flex-shrink-0" />
+                            <span className="font-heading font-bold text-white">Instagram</span>
                           </a>
                         )}
                       </div>

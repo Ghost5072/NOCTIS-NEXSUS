@@ -29,6 +29,24 @@ export default function TournamentsPage() {
     return status.toLowerCase().trim();
   };
 
+  const getAutomaticStatus = (tournament: Tournaments): string => {
+    const now = new Date();
+    const startDate = tournament.startDate ? new Date(tournament.startDate) : null;
+    const completionDate = tournament.completionDate ? new Date(tournament.completionDate) : null;
+
+    if (!startDate) return tournament.status || 'upcoming';
+
+    if (completionDate && now > completionDate) {
+      return 'completed';
+    }
+
+    if (now >= startDate && (!completionDate || now <= completionDate)) {
+      return 'active';
+    }
+
+    return 'upcoming';
+  };
+
   useEffect(() => {
     loadTournaments(0);
   }, [activeFilter, activeGameFilter]);
@@ -164,11 +182,11 @@ export default function TournamentsPage() {
                           <div className="p-6 space-y-4">
                             <div className="flex items-center justify-between">
                               <span className={`px-3 py-1 text-xs font-heading font-bold rounded ${
-                                normalizeStatus(tournament.status) === 'active' ? 'bg-primary text-primary-foreground' :
-                                normalizeStatus(tournament.status) === 'upcoming' ? 'bg-secondary text-secondary-foreground' :
+                                normalizeStatus(getAutomaticStatus(tournament)) === 'active' ? 'bg-primary text-primary-foreground' :
+                                normalizeStatus(getAutomaticStatus(tournament)) === 'upcoming' ? 'bg-secondary text-secondary-foreground' :
                                 'bg-off-white/20 text-off-white'
                               }`}>
-                                {tournament.status}
+                                {getAutomaticStatus(tournament).charAt(0).toUpperCase() + getAutomaticStatus(tournament).slice(1)}
                               </span>
                             </div>
                             <h3 className="font-heading text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2">

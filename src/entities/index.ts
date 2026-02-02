@@ -38,6 +38,8 @@ export interface CommunityMembers {
   _updatedDate?: Date;
   /** @wixFieldType text */
   memberName?: string;
+  /** @wixFieldType url */
+  instagramUrl?: string;
   /** @wixFieldType text */
   bio?: string;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
@@ -132,6 +134,8 @@ export interface Tournaments {
   _id: string;
   _createdDate?: Date;
   _updatedDate?: Date;
+  /** @wixFieldType date */
+  completionDate?: Date | string;
   /** @wixFieldType text */
   tournamentName?: string;
   /** @wixFieldType text */

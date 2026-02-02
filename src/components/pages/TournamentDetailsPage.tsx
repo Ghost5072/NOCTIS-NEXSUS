@@ -25,6 +25,24 @@ export default function TournamentDetailsPage() {
     setIsLoading(false);
   };
 
+  const getAutomaticStatus = (tournament: Tournaments): string => {
+    const now = new Date();
+    const startDate = tournament.startDate ? new Date(tournament.startDate) : null;
+    const completionDate = tournament.completionDate ? new Date(tournament.completionDate) : null;
+
+    if (!startDate) return tournament.status || 'upcoming';
+
+    if (completionDate && now > completionDate) {
+      return 'completed';
+    }
+
+    if (now >= startDate && (!completionDate || now <= completionDate)) {
+      return 'active';
+    }
+
+    return 'upcoming';
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
@@ -81,7 +99,7 @@ export default function TournamentDetailsPage() {
                   <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
                     <div className="space-y-4">
                       <div className="inline-block px-4 py-2 bg-primary text-primary-foreground font-heading font-bold text-sm rounded-lg">
-                        {tournament.status}
+                        {getAutomaticStatus(tournament).charAt(0).toUpperCase() + getAutomaticStatus(tournament).slice(1)}
                       </div>
                       <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white break-words">
                         {tournament.tournamentName}
@@ -131,7 +149,7 @@ export default function TournamentDetailsPage() {
                       <h3 className="font-heading text-lg font-bold text-white">Status</h3>
                     </div>
                     <p className="font-heading text-2xl font-bold text-white">
-                      {tournament.status}
+                      {getAutomaticStatus(tournament).charAt(0).toUpperCase() + getAutomaticStatus(tournament).slice(1)}
                     </p>
                   </div>
                 </div>
@@ -217,7 +235,7 @@ export default function TournamentDetailsPage() {
                         </div>
                         <div className="flex justify-between">
                           <span className="text-off-white/50">Status</span>
-                          <span className="text-white font-bold">{tournament.status}</span>
+                          <span className="text-white font-bold">{getAutomaticStatus(tournament).charAt(0).toUpperCase() + getAutomaticStatus(tournament).slice(1)}</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-off-white/50">Prize Pool</span>
