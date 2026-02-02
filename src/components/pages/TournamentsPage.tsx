@@ -20,6 +20,10 @@ export default function TournamentsPage() {
   const games = ['All Games', 'Blood Strike', 'Free Fire', 'CODM', 'PUBG', 'eFootball'];
   const statuses = ['All', 'Active', 'Upcoming', 'Completed'];
 
+  const normalizeString = (str: string): string => {
+    return str.toLowerCase().trim().replace(/\s+/g, '');
+  };
+
   useEffect(() => {
     loadTournaments(0);
   }, [activeFilter, activeGameFilter]);
@@ -34,7 +38,8 @@ export default function TournamentsPage() {
       filtered = filtered.filter(t => t.status?.toLowerCase() === activeFilter.toLowerCase());
     }
     if (activeGameFilter !== 'All Games') {
-      filtered = filtered.filter(t => t.gameTitle?.toLowerCase() === activeGameFilter.toLowerCase());
+      const normalizedFilter = normalizeString(activeGameFilter);
+      filtered = filtered.filter(t => normalizeString(t.gameTitle || '') === normalizedFilter);
     }
 
     setTournaments(filtered);
