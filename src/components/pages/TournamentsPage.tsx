@@ -34,7 +34,7 @@ export default function TournamentsPage() {
       filtered = filtered.filter(t => t.status?.toLowerCase() === activeFilter.toLowerCase());
     }
     if (activeGameFilter !== 'All Games') {
-      filtered = filtered.filter(t => t.gameTitle === activeGameFilter);
+      filtered = filtered.filter(t => t.gameTitle?.toLowerCase() === activeGameFilter.toLowerCase());
     }
 
     setTournaments(filtered);
