@@ -24,6 +24,11 @@ export default function TournamentsPage() {
     return str.toLowerCase().trim().replace(/\s+/g, '');
   };
 
+  const normalizeStatus = (status: string | undefined): string => {
+    if (!status) return '';
+    return status.toLowerCase().trim();
+  };
+
   useEffect(() => {
     loadTournaments(0);
   }, [activeFilter, activeGameFilter]);
@@ -35,7 +40,8 @@ export default function TournamentsPage() {
     
     let filtered = result.items;
     if (activeFilter !== 'All') {
-      filtered = filtered.filter(t => t.status?.toLowerCase() === activeFilter.toLowerCase());
+      const normalizedFilter = normalizeStatus(activeFilter);
+      filtered = filtered.filter(t => normalizeStatus(t.status) === normalizedFilter);
     }
     if (activeGameFilter !== 'All Games') {
       const normalizedFilter = normalizeString(activeGameFilter);
@@ -158,8 +164,8 @@ export default function TournamentsPage() {
                           <div className="p-6 space-y-4">
                             <div className="flex items-center justify-between">
                               <span className={`px-3 py-1 text-xs font-heading font-bold rounded ${
-                                tournament.status === 'Active' ? 'bg-primary text-primary-foreground' :
-                                tournament.status === 'Upcoming' ? 'bg-secondary text-secondary-foreground' :
+                                normalizeStatus(tournament.status) === 'active' ? 'bg-primary text-primary-foreground' :
+                                normalizeStatus(tournament.status) === 'upcoming' ? 'bg-secondary text-secondary-foreground' :
                                 'bg-off-white/20 text-off-white'
                               }`}>
                                 {tournament.status}
