@@ -229,7 +229,7 @@ export default function TournamentDetailsPage() {
                         } 
                       }}
                        className="w-full px-8 py-4 bg-primary text-primary-foreground font-heading font-bold text-lg rounded-lg hover:shadow-[0_0_30px_rgba(0,217,255,0.5)] transition-all duration-300">
-                        Register Now
+                        Register Now ₦1000
                       </button>
                     </div>
 
