@@ -84,15 +84,12 @@ export default function Footer() {
             <h3 className="font-heading text-base md:text-lg font-bold text-white">Get in Touch</h3>
             <div className="space-y-4">
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=noctisgamingng@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:noctisgamingng@gmail.com"
                 className="flex items-center gap-3 font-paragraph text-xs md:text-sm text-off-white/70 hover:text-primary transition-colors break-words"
               >
-              <Mail className="w-5 h-5 flex-shrink-0" />
-              <span>noctisgamingng@gmail.com</span>
+                <Mail className="w-5 h-5 flex-shrink-0" />
+                <span>noctisgamingng@gmail.com</span>
               </a>
-
               <p className="font-paragraph text-xs md:text-sm text-off-white/70">
                 Join our community and compete in Nigeria's biggest student esports tournaments.
               </p>
