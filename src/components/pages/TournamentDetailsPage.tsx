@@ -220,7 +220,15 @@ export default function TournamentDetailsPage() {
                       <p className="font-paragraph text-off-white/70">
                         Register now to secure your spot in this tournament
                       </p>
-                      <button className="w-full px-8 py-4 bg-primary text-primary-foreground font-heading font-bold text-lg rounded-lg hover:shadow-[0_0_30px_rgba(0,217,255,0.5)] transition-all duration-300">
+                      <button
+                      onClick={() => { if (tournament) { 
+                        const phoneNumber = "2349155716184"; // your WhatsApp number in intl format 
+                        const message = `Hello, I'd like to register for '${tournament.tournamentName}' (${tournament.gameTitle}) tournament.`; 
+                        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`; 
+                        window.open(whatsappLink, "_blank"); 
+                        } 
+                      }}
+                       className="w-full px-8 py-4 bg-primary text-primary-foreground font-heading font-bold text-lg rounded-lg hover:shadow-[0_0_30px_rgba(0,217,255,0.5)] transition-all duration-300">
                         Register Now
                       </button>
                     </div>
