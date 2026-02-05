@@ -1,13 +1,13 @@
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { Button } from '@/components/ui/button';
+import { Image } from '@/components/ui/image';
+import { Tournaments } from '@/entities';
+import { BaseCrudService } from '@/integrations';
+import { motion } from 'framer-motion';
+import { ArrowRight, Filter, Trophy } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Trophy, Calendar, ArrowRight, Filter } from 'lucide-react';
-import { BaseCrudService } from '@/integrations';
-import { Tournaments } from '@/entities';
-import { Image } from '@/components/ui/image';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
 
 export default function TournamentsPage() {
   const [tournaments, setTournaments] = useState<Tournaments[]>([]);
@@ -55,7 +55,7 @@ export default function TournamentsPage() {
     setIsLoading(true);
     // Fetch all tournaments to apply client-side filtering
     const result = await BaseCrudService.getAll<Tournaments>('tournaments', {}, { limit: 100 });
-    
+
     let filtered = result.items;
     if (activeFilter !== 'All') {
       const normalizedFilter = normalizeStatus(activeFilter);
@@ -195,7 +195,7 @@ export default function TournamentsPage() {
                             <p className="font-paragraph text-off-white/70">{tournament.gameTitle}</p>
                             <div className="space-y-3 pt-4 border-t border-off-white/10">
                               <div className="flex items-center justify-between">
-                                <span className="font-paragraph text-sm text-off-white/50">Prize Pool</span>
+                                <span className="font-paragraph text-sm text-off-white/50">Grand Prize</span>
                                 <span className="font-heading text-lg font-bold text-primary">
                                   ₦{tournament.prizePool?.toLocaleString()}
                                 </span>
