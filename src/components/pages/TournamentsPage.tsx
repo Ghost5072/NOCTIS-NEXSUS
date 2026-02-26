@@ -59,7 +59,7 @@ export default function TournamentsPage() {
     let filtered = result.items;
     if (activeFilter !== 'All') {
       const normalizedFilter = normalizeStatus(activeFilter);
-      filtered = filtered.filter(t => normalizeStatus(t.status) === normalizedFilter);
+      filtered = filtered.filter(t => normalizeStatus(getAutomaticStatus(t)) === normalizedFilter);
     }
     if (activeGameFilter !== 'All Games') {
       const normalizedFilter = normalizeString(activeGameFilter);
